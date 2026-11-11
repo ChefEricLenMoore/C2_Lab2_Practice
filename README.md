@@ -7,7 +7,9 @@ The repository is used to practise Pull Requests, commit messages, README update
 
 - Add, subtract, multiply and divide two numbers
 - Clear error message when dividing by zero (`Divide: Cannot divide by zero`) instead of a crash
+- Asks again if you type something that isn't a number (like `abc`, `inf` or `nan`)
 - Simple command-line prompt (`main.py`)
+- Automated tests (`test_calculator.py`)
 
 ## Project structure
 
@@ -15,7 +17,8 @@ The repository is used to practise Pull Requests, commit messages, README update
 |------|---------|
 | `main.py` | Starting point. Asks for two numbers and prints the results. |
 | `calculator.py` | The four math functions. |
-| `utils.py` | Helper that turns typed text into a number. |
+| `utils.py` | Helper that turns typed text into a number and rejects bad input. |
+| `test_calculator.py` | Automated tests for the math functions and input handling. |
 | `README.md` | This file. |
 | `.gitignore` | Tells Git which files not to track (caches, virtual environments, editor files). |
 
@@ -49,6 +52,22 @@ Divide: 2.0
 ```
 
 Results are shown as decimals (for example `9.0`) because the inputs are read as decimal numbers.
+
+If you type something that isn't a number, the program asks again:
+
+```
+First number: abc
+Please enter a number, for example 6 or 2.5.
+First number: 6
+```
+
+## Run the tests
+
+```bash
+python -m unittest -v
+```
+
+This runs the 9 tests in `test_calculator.py` using Python's built-in `unittest` – nothing extra to install.
 
 ## Use the functions in your own code
 
