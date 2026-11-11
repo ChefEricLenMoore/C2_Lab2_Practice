@@ -8,6 +8,7 @@ The repository is used to practise Pull Requests, commit messages, README update
 - Add, subtract, multiply and divide two numbers
 - Clear error message when dividing by zero (`Divide: Cannot divide by zero`) instead of a crash
 - Asks again if you type something that isn't a number (like `abc`, `inf` or `nan`)
+- Says "Goodbye!" if you quit at a prompt with Ctrl+C (or Ctrl+Z then Enter on Windows) instead of showing an error
 - Simple command-line prompt (`main.py`)
 - Automated tests (`test_calculator.py`)
 
@@ -67,7 +68,7 @@ First number: 6
 python -m unittest -v
 ```
 
-This runs the 9 tests in `test_calculator.py` using Python's built-in `unittest` – nothing extra to install.
+This runs the 10 tests in `test_calculator.py` using Python's built-in `unittest` – nothing extra to install.
 
 ## Use the functions in your own code
 
