@@ -23,6 +23,7 @@ The repository is used to practise Pull Requests, commit messages, README update
 | `README.md` | This file. |
 | `.gitignore` | Tells Git which files not to track (caches, virtual environments, editor files). |
 | `LICENSE` | The MIT License – how others may use this code. |
+| `docs/evidence/` | Screenshots showing the Lab 2 tasks were completed ([details](docs/evidence/README.md)). |
 
 ## Requirements
 
