@@ -1,0 +1,16 @@
+# Python files that are created automatically and should not be committed
+__pycache__/
+*.py[cod]
+
+# Virtual environments (local copies of Python packages)
+.venv/
+venv/
+
+# Secrets and local settings - never commit these
+.env
+
+# Editor and operating system clutter
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
