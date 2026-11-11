@@ -6,7 +6,7 @@ from contextlib import redirect_stdout  # Sends print() output into a StringIO i
 from unittest.mock import patch  # Lets a test pretend to be the user typing answers.
 
 from calculator import add, subtract, multiply, divide  # The four math functions under test.
-from main import ask_number  # The prompt helper that should re-ask on bad input.
+from main import ask_number, run  # The prompt helper and the program starter.
 from utils import parse_number  # The text-to-number helper under test.
 
 
@@ -65,6 +65,18 @@ class TestAskNumber(unittest.TestCase):  # Tests for the prompt helper in main.p
                 result = ask_number("First number: ")  # Runs the helper with the fake answers.
         self.assertEqual(result, 6.0)  # The first valid answer is returned.
         self.assertEqual(output.getvalue().count("Please enter a number"), 2)  # One friendly message per bad answer.
+
+
+class TestQuitting(unittest.TestCase):  # Tests for leaving the program early.
+    """Tests that quitting at a prompt says goodbye instead of crashing."""  # Describes the group.
+
+    def test_quit_says_goodbye(self):  # Ctrl+C and end of input (Ctrl+Z / Ctrl+D).
+        for error in [KeyboardInterrupt, EOFError]:  # The two ways a user can quit.
+            with self.subTest(error=error.__name__):  # Reports which one failed, if one does.
+                with patch("builtins.input", side_effect=error):  # The first input() call acts as if the user quit.
+                    with redirect_stdout(io.StringIO()) as output:  # Captures what the program prints.
+                        run()  # Must not raise an error.
+                self.assertIn("Goodbye!", output.getvalue())  # A friendly message is shown instead.
 
 
 if __name__ == "__main__":  # True only when you run this file directly.

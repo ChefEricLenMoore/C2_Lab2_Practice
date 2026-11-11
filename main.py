@@ -26,5 +26,13 @@ def main():  # Groups the program's steps into one function.
         print("Divide:", error)  # Prints the friendly message "Cannot divide by zero".
 
 
+def run():  # Starts the program, but exits politely if the user quits early.
+    """Run main(); print "Goodbye!" instead of an error if the user quits."""  # Describes what run() does.
+    try:  # Catches the two ways a user can quit at a prompt.
+        main()  # Runs the calculator.
+    except (EOFError, KeyboardInterrupt):  # EOFError: Ctrl+Z then Enter (Windows) or Ctrl+D; KeyboardInterrupt: Ctrl+C.
+        print("\nGoodbye!")  # A friendly message on a new line instead of a Python traceback.
+
+
 if __name__ == "__main__":  # True only when you run this file directly, not when another file imports it.
-    main()  # Starts the program.
+    run()  # Starts the program.
