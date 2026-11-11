@@ -20,5 +20,7 @@ def multiply(a, b):  # Defines multiply.
 
 
 def divide(a, b):  # Defines divide.
-    """Return a divided by b."""  # Describes the result.
-    return a / b  # / always gives a decimal (6 / 3 is 2.0).
+    """Return a divided by b. Raises ValueError if b is 0."""  # Documents the error case too.
+    if b == 0:  # Checks for dividing by zero BEFORE doing the math.
+        raise ValueError("Cannot divide by zero")  # Stops with a clear, readable error message.
+    return a / b  # Safe to divide now; / always gives a decimal (6 / 3 is 2.0).
