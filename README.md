@@ -22,6 +22,7 @@ The repository is used to practise Pull Requests, commit messages, README update
 | `test_calculator.py` | Automated tests for the math functions and input handling. |
 | `README.md` | This file. |
 | `.gitignore` | Tells Git which files not to track (caches, virtual environments, editor files). |
+| `LICENSE` | The MIT License – how others may use this code. |
 
 ## Requirements
 
@@ -87,3 +88,7 @@ print(divide(6, 3))   # 2.0
 4. AI explanation of an unfamiliar repository
 5. AI improvement of this README
 6. AI-drafted reply to a review comment
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
