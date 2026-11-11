@@ -12,3 +12,13 @@ def add(a, b):  # "def" creates a function named add that takes two inputs, a an
 def subtract(a, b):  # Defines subtract with the same two inputs.
     """Return a minus b."""  # Order matters: subtract(5, 2) is 3, not -3.
     return a - b  # Sends back the difference.
+
+
+def multiply(a, b):  # Defines multiply.
+    """Return a times b."""  # Describes the result.
+    return a * b  # In Python, * means multiply.
+
+
+def divide(a, b):  # Defines divide.
+    """Return a divided by b."""  # Describes the result.
+    return a / b  # / always gives a decimal (6 / 3 is 2.0).
