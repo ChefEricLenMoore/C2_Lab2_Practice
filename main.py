@@ -1,38 +1,55 @@
-"""main.py - the starting point of the program. Run it with: python main.py"""  # Says how to run it.
+"""main.py - the starting point of the program.
 
-from calculator import add, subtract, multiply, divide  # Brings in the four math functions.
-from utils import parse_number  # Brings in the helper that turns text into a number.
+Run it with: python main.py
+"""
 
-
-def ask_number(prompt):  # Keeps asking until the user types a valid number.
-    """Ask for a number and repeat the question until the answer is valid."""  # Describes what ask_number() does.
-    while True:  # Loops until a valid number is typed; the "return" below is the only way out.
-        try:  # "try" lets us catch bad input instead of crashing.
-            return parse_number(input(prompt))  # input() reads what the user types; a valid number is sent back.
-        except ValueError:  # parse_number() raised ValueError: not a number (like "abc"), or inf/nan.
-            print("Please enter a number, for example 6 or 2.5.")  # Explains what to type; the loop then asks again.
+# Bring in the four math functions and the text-to-number helper.
+from calculator import add, subtract, multiply, divide
+from utils import parse_number
 
 
-def main():  # Groups the program's steps into one function.
-    """Ask for two numbers and print every calculation."""  # Describes what main() does.
-    a = ask_number("First number: ")  # Asks for the first number, repeating until it is valid.
-    b = ask_number("Second number: ")  # Same for the second number.
-    print("Add:", add(a, b))  # Prints the label and the result side by side.
-    print("Subtract:", subtract(a, b))  # Prints a - b.
-    print("Multiply:", multiply(a, b))  # Prints a * b.
-    try:  # "try" lets us catch an error instead of crashing.
-        print("Divide:", divide(a, b))  # Prints a / b when b is not 0.
-    except ValueError as error:  # Runs only if divide() raised ValueError (b was 0).
-        print("Divide:", error)  # Prints the friendly message "Cannot divide by zero".
+def ask_number(prompt):
+    """Ask for a number and repeat the question until the answer is valid."""
+    # Loop until a valid number is typed; "return" is the only way out.
+    while True:
+        # "try" lets us catch bad input instead of crashing.
+        try:
+            # input() reads what the user types; a valid number is returned.
+            return parse_number(input(prompt))
+        # parse_number() raised ValueError: not a number, or inf/nan.
+        except ValueError:
+            # Explain what to type; the loop then asks again.
+            print("Please enter a number, for example 6 or 2.5.")
 
 
-def run():  # Starts the program, but exits politely if the user quits early.
-    """Run main(); print "Goodbye!" instead of an error if the user quits."""  # Describes what run() does.
-    try:  # Catches the two ways a user can quit at a prompt.
-        main()  # Runs the calculator.
-    except (EOFError, KeyboardInterrupt):  # EOFError: Ctrl+Z then Enter (Windows) or Ctrl+D; KeyboardInterrupt: Ctrl+C.
-        print("\nGoodbye!")  # A friendly message on a new line instead of a Python traceback.
+def main():
+    """Ask for two numbers and print every calculation."""
+    a = ask_number("First number: ")
+    b = ask_number("Second number: ")
+    # Print each label and its result side by side.
+    print("Add:", add(a, b))
+    print("Subtract:", subtract(a, b))
+    print("Multiply:", multiply(a, b))
+    try:
+        print("Divide:", divide(a, b))
+    # divide() raises ValueError when b is 0.
+    except ValueError as error:
+        # Prints the friendly message "Cannot divide by zero".
+        print("Divide:", error)
 
 
-if __name__ == "__main__":  # True only when you run this file directly, not when another file imports it.
-    run()  # Starts the program.
+def run():
+    """Run main(); print "Goodbye!" instead of an error if the user quits."""
+    try:
+        main()
+    # EOFError: Ctrl+Z then Enter (Windows) or Ctrl+D (Mac/Linux).
+    # KeyboardInterrupt: Ctrl+C.
+    except (EOFError, KeyboardInterrupt):
+        # A friendly message on a new line instead of a Python traceback.
+        print("\nGoodbye!")
+
+
+# True only when you run this file directly,
+# not when another file (like the tests) imports it.
+if __name__ == "__main__":
+    run()
