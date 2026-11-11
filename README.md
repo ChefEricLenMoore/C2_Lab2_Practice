@@ -3,9 +3,6 @@
 A small Python calculator built as practice for **Course 2, Lab 2: Using AI with GitHub (Web Interface)**.
 The repository is used to practise Pull Requests, commit messages, README updates and code review with AI help.
 
-> **Status:** the calculator code is in [Pull Request #1](https://github.com/ChefEricLenMoore/C2_Lab2_Practice/pull/1)
-> (branch `features`). It will appear on `main` once that PR is merged.
-
 ## Features
 
 - Add, subtract, multiply and divide two numbers
@@ -32,7 +29,6 @@ The repository is used to practise Pull Requests, commit messages, README update
 ```bash
 git clone https://github.com/ChefEricLenMoore/C2_Lab2_Practice.git
 cd C2_Lab2_Practice
-git switch features   # until PR #1 is merged, the code lives on this branch
 ```
 
 ## Run it
