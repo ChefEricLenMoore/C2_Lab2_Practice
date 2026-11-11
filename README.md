@@ -9,9 +9,8 @@ The repository is used to practise Pull Requests, commit messages, README update
 ## Features
 
 - Add, subtract, multiply and divide two numbers
+- Clear error message when dividing by zero (`Divide: Cannot divide by zero`) instead of a crash
 - Simple command-line prompt (`main.py`)
-
-**Known limitation:** dividing by zero currently crashes the program. A fix is planned before PR #1 is merged.
 
 ## Project structure
 
