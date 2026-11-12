@@ -23,7 +23,7 @@ The repository is used to practise Pull Requests, commit messages, README update
 | `README.md` | This file. |
 | `.gitignore` | Tells Git which files not to track (caches, virtual environments, editor files). |
 | `LICENSE` | The MIT License – how others may use this code. |
-| `docs/evidence/` | Screenshots showing the Lab 2 tasks were completed ([details](docs/evidence/README.md)). |
+| `docs/evidence/` | Screenshots showing the Lab 2 tasks were completed, grouped by task ([details](docs/evidence/README.md)). |
 
 ## Requirements
 
@@ -63,6 +63,21 @@ First number: abc
 Please enter a number, for example 6 or 2.5.
 First number: 6
 ```
+
+## Run it online (nothing to install)
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ChefEricLenMoore/C2_Lab2_Practice?quickstart=1)
+
+1. Click the button above (or go to
+   <https://codespaces.new/ChefEricLenMoore/C2_Lab2_Practice?quickstart=1>)
+   and sign in to GitHub.
+2. Click **Create codespace**. A copy of VS Code opens in your browser with
+   Python already installed.
+3. In the **Terminal** at the bottom, run `python main.py` to use the
+   calculator, or `python -m unittest -v` to run the tests.
+
+Personal GitHub accounts get free Codespaces hours each month. Stop or delete
+the codespace when you are done (**github.com/codespaces**).
 
 ## Run the tests
 
